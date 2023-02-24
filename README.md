@@ -4,4 +4,4 @@
 
 Test the app using Expo snack: https://snack.expo.dev/@paladinic/expo_drumachine
 
-![ezgif-4-fa172e00e8](https://user-images.githubusercontent.com/25911312/221201052-be0acce8-86a3-45a5-952b-1ed211a1dd66.gif)
+![image](https://user-images.githubusercontent.com/25911312/221269101-f9a99dfc-54d0-4f13-81b2-52b050b50d2f.png)
