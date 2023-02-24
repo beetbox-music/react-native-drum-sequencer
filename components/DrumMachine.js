@@ -33,9 +33,9 @@ const DrumMachine = () => {
     };
 
     // sounds states and functions:
-    const [kick, setKick] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
-    const [snare, setSnare] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
-    const [hat, setHat] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
+    const [kick, setKick] = React.useState(Array(15).fill(0));
+    const [snare, setSnare] = React.useState(Array(15).fill(0));
+    const [hat, setHat] = React.useState(Array(15).fill(0));
     
     async function load(){
 
@@ -130,7 +130,7 @@ const DrumMachine = () => {
             let last_played = -1;
 
             // bar/beat/step length in milliseconds from BPM (tempo) 
-            const beat_len = 60000 / tempo;
+            const beat_len = 60000 / (tempo * 2);
 
             // set index to (last) loop
             let index = loop; 
@@ -152,7 +152,7 @@ const DrumMachine = () => {
                     playSound(index);
                     setLoop(index);
                     
-                    if (index === 7) {
+                    if (index === 15) {
                         index = 0
                     }
                     else {
@@ -222,14 +222,7 @@ const DrumMachine = () => {
                 startLoop={startLoop}
                 resetLoop={resetLoop}
                 tempo={tempo}
-            />
-            <DMSlider
-                looping={looping}
-                stopLoop={stopLoop}
-                startLoop={startLoop}
-                resetLoop={resetLoop}
-                tempo={tempo}
-                update_tempo={update_tempo}
+                update_tempo={update_tempo} 
             />
         </View>
     );

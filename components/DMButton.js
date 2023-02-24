@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable , View} from 'react-native';
+import { Pressable , TouchableOpacity,View} from 'react-native';
 import Styles from "./Styles";
 
 const DMButton = function({loop,id,set_inst_array,inst_style}){

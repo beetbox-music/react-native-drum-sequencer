@@ -12,7 +12,9 @@ export default function App() {
     <View style={Styles.container}>
       <Header/>
       <DrumMachine/>
-      <StatusBar style="light" />
+      <StatusBar  
+        // hidden={true} 
+        style="light" />
     </View>
   );
 }
