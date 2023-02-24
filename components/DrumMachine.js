@@ -114,6 +114,8 @@ const DrumMachine = () => {
         updateHatVolume(hatVolume)
     }, [hatVolume]);
 
+
+
     // LOOP/SEQUENCER:
     // - option 1: check every millisecond if a sound(s) should be playing
     React.useEffect(() => {
@@ -159,7 +161,7 @@ const DrumMachine = () => {
                     last_played = current_beat;
                 }
 
-            }, 1);
+            }, 0);
 
             return () => {
                 unload();
@@ -194,6 +196,8 @@ const DrumMachine = () => {
     //         };
     //     }
     // }, [looping]);
+
+
 
     return (
         <View style={Styles.drum_machine}>

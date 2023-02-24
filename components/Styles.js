@@ -4,7 +4,7 @@ const Styles = StyleSheet.create({
     container:{
       flex: 1,
       alignItems: 'center',
-      backgroundColor: '#20124D',
+      backgroundColor: '#231e2d',
     },
     header:{ 
       paddingTop:50,
@@ -55,30 +55,36 @@ const Styles = StyleSheet.create({
     },
     settings_container:{
       position:"absolute",
-      justifyContent:"space-around",
+      justifyContent:"space-between",
+      flexDirection:"column",
       zIndex:1,
       width:"100%",
-      backgroundColor:"rgba(0,0,0,.8)",
-      borderRadius:20,
+      backgroundColor:"rgba(0,0,0,.7)",
+      borderRadius:10,
       padding:20,
     },
     settings_close_outer:{
       marginTop:10,
-      backgroundColor:"rgba(50,0,0,1)",
-      width:100,
-      height:60,
+      backgroundColor:"rgba(100,0,0,1)",
+      height:45,
       marginLeft:"auto",
       marginRight:"auto",
       borderRadius:20,
 
     },
     settings_close:{
-      backgroundColor:"rgba(100,100,100,1)",
+      backgroundColor:"rgba(150,10,10,1)",
       borderRadius:20,
-      borderWidth:5,
       textAlignVertical:"center",
       borderColor:"rgba(100,10,10,1)",
-      width:100,
+    },
+    settings_header:{
+      flexDirection:"row",
+      justifyContent:'space-around',
+      marginBottom:30,
+    },
+    settings_header_txt:{
+      fontSize:30,
     },
     dm_pads:{
       // flex:.85,

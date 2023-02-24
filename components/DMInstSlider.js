@@ -20,9 +20,9 @@ function DMInstSlider({ update_volume, inst_name, kickVolume, snareVolume, hatVo
             style={Styles.dm_slider}
             minimumValue={0}
             maximumValue={1}
-            step={0.1}
+            step={0.01}
             value={inst_volume}
-            onValueChange={(v) => update_volume(v)}
+            onValueChange={(v) => update_volume(v,inst_name)}
             minimumTrackTintColor="#FFFFFF"
             maximumTrackTintColor="#000000"
         />
