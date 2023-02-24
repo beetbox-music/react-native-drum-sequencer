@@ -8,7 +8,7 @@ const Styles = StyleSheet.create({
     },
     header:{ 
       paddingTop:50,
-      borderBottomWidth:10,
+      borderBottomWidth:7,
       borderColor:"white"
     },
     header_txt:{
@@ -101,12 +101,9 @@ const Styles = StyleSheet.create({
       width: 100,
       height: 50,
       marginHorizontal:20,
-      borderRadius: 100/25,
-      elevation: 3,
+      borderRadius: 100,
+      elevation: 2,
       backgroundColor: '#00000000',
-      borderColor:"#ffffff99",
-      borderWidth: 2,
-      borderStyle:"solid",
     },
     dm_tempo_input:{
       color:"white",
@@ -128,6 +125,27 @@ const Styles = StyleSheet.create({
       marginLeft:"auto",
       marginRight:"auto",
     },
+    inst_btn:{
+      elevation:2,
+      borderRadius:100,
+      margin:10,
+      marginVertical:10,
+      backgroundColor: '#00000000',
+    },
+    dm_mute_inst:{
+      marginTop:20,
+      textAlign:"center",
+      fontWeight:"900"
+    },
+    dm_inst_mute_high:{
+      color:"#00ff9d"
+    },
+    dm_inst_mute_medium:{
+      color:"#e0d12c"
+    },
+    dm_inst_mute_low:{
+      color:"#b55c5c"
+    },
     dm_inst_btn:{
       borderRadius:10,
       height:55,
@@ -143,13 +161,6 @@ const Styles = StyleSheet.create({
     },
     checked:{
       opacity:.85,
-    },
-    dm_play_btn:{
-      height:50,
-      margin:5,
-      flex:.5,
-      justifyContent:"space-around"
-
     },
     dm_play_btn_txt:{
       color:"white",

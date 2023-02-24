@@ -9,17 +9,17 @@ function DMNav({looping,stopLoop,startLoop,resetLoop,tempo}){
             <TouchableOpacity 
                 onPress={looping ? stopLoop : startLoop} 
                 style={Styles.dm_nav_btn}>
-                <Text style={Styles.btn_text}>{looping ? "PAUSE" : "PLAY"}</Text>
+                <Text style={Styles.txt}>{looping ? "PAUSE" : "PLAY"}</Text>
             </TouchableOpacity>
             <View style={Styles.dm_nav_btn}>
-                <Text style={Styles.btn_text}>
+                <Text style={Styles.txt}>
                 {tempo}
                 </Text>
             </View>
             <TouchableOpacity
                 onPress={resetLoop}
                 style={Styles.dm_nav_btn}>
-                <Text style={Styles.btn_text}>RESET</Text>
+                <Text style={Styles.txt}>RESET</Text>
             </TouchableOpacity>
         </View>
     )
