@@ -53,6 +53,33 @@ const Styles = StyleSheet.create({
       flexDirection:'column',
       justifyContent:"space-around"
     },
+    settings_container:{
+      position:"absolute",
+      justifyContent:"space-around",
+      zIndex:1,
+      width:"100%",
+      backgroundColor:"rgba(0,0,0,.8)",
+      borderRadius:20,
+      padding:20,
+    },
+    settings_close_outer:{
+      marginTop:10,
+      backgroundColor:"rgba(50,0,0,1)",
+      width:100,
+      height:60,
+      marginLeft:"auto",
+      marginRight:"auto",
+      borderRadius:20,
+
+    },
+    settings_close:{
+      backgroundColor:"rgba(100,100,100,1)",
+      borderRadius:20,
+      borderWidth:5,
+      textAlignVertical:"center",
+      borderColor:"rgba(100,10,10,1)",
+      width:100,
+    },
     dm_pads:{
       // flex:.85,
       flexDirection:'row',

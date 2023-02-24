@@ -36,17 +36,22 @@ const DrumMachine = () => {
     const [kick, setKick] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
     const [snare, setSnare] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
     const [hat, setHat] = React.useState([0, 0, 0, 0, 0, 0, 0, 0]);
+    
     async function load(){
 
         kickSound = new Audio.Sound();
         snareSound = new Audio.Sound();
         hatSound = new Audio.Sound();
-
+        
         try {
             await kickSound.loadAsync(require('../assets/instruments/kick.wav'));
             await snareSound.loadAsync(require('../assets/instruments/snare.wav'));
             await hatSound.loadAsync(require('../assets/instruments/hat.wav'));
 
+            // kickSound.setVolumeAsync(kickVolume)
+            // snareSound.setVolumeAsync(snareVolume)
+            // hatSound.setVolumeAsync(hatVolume)
+            
         } catch (err) {
             console.log("LOADING ERROR:");
             console.error(err);
@@ -69,7 +74,7 @@ const DrumMachine = () => {
             playKick();
         }
         if (snare[index] === 1) {
-            playSnare();
+                        playSnare();
         }
         if (hat[index] === 1) {
             playHat();
@@ -84,6 +89,30 @@ const DrumMachine = () => {
     async function playHat() {
         await hatSound.replayAsync();
     };
+    async function updateKickVolume(v) {
+        await kickSound.setVolumeAsync(v);
+    };
+    async function updateSnareVolume(v) {
+        await snareSound.setVolumeAsync(v);
+    };
+    async function updateHatVolume(v) {
+        await hatSound.setVolumeAsync(v);
+    };
+
+    // settings
+    const [kickVolume, setKickVolume] = React.useState(1);
+    const [snareVolume, setSnareVolume] = React.useState(1);
+    const [hatVolume, setHatVolume] = React.useState(1);
+
+    React.useEffect(() => {
+        updateKickVolume(kickVolume)
+    }, [kickVolume]);
+    React.useEffect(() => {
+        updateSnareVolume(snareVolume)
+    }, [snareVolume]);
+    React.useEffect(() => {
+        updateHatVolume(hatVolume)
+    }, [hatVolume]);
 
     // LOOP/SEQUENCER:
     // - option 1: check every millisecond if a sound(s) should be playing
@@ -176,6 +205,12 @@ const DrumMachine = () => {
                 setKick={setKick}
                 setSnare={setSnare}
                 setHat={setHat}
+                setKickVolume = {setKickVolume}
+                setSnareVolume = {setSnareVolume}
+                setHatVolume = {setHatVolume}
+                kickVolume = {kickVolume}
+                snareVolume = {snareVolume}
+                hatVolume = {hatVolume}
             />
             <DMNav
                 looping={looping}
