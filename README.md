@@ -1,5 +1,3 @@
-# py-beatbox-react-native
+# react-native-drum-sequencer
 
-sexy ass appz
-
-*poom poom cha*
+An open-source drum-sequencer built using React Native and Expo
