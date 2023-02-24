@@ -121,7 +121,7 @@ const Styles = StyleSheet.create({
       width:90, 
       height:45,
       borderRadius:10,
-      backgroundColor:"white",
+      backgroundColor:"rgba(255,255,255,1)",
       marginLeft:"auto",
       marginRight:"auto",
     },
@@ -153,7 +153,7 @@ const Styles = StyleSheet.create({
       marginHorizontal:5
     },
     dm_inst_btn_active:{
-      borderColor:"rgba(100,10,10,1)",
+      borderColor:"rgba(10,195,50,1)",
       borderWidth:7,
     },
     unchecked:{
