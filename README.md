@@ -4,4 +4,4 @@
 
 Test the app using Expo snack: https://snack.expo.dev/@paladinic/expo_drumachine
 
-![image](https://user-images.githubusercontent.com/25911312/221169152-1cd2d8ff-0594-4e42-8c3f-fc22672ce651.png)
+![screen-20230224-120843 (online-video-cutter com)](https://user-images.githubusercontent.com/25911312/221176386-0a353bec-7dda-4ea8-ba0d-0616f4741e55.gif)
