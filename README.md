@@ -1,5 +1,8 @@
 # react-native-drum-sequencer
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
+
 ### An open-source drum-sequencer built using React Native and Expo
 
 Test the app using Expo snack: https://snack.expo.dev/@paladinic/expo_drumachine
