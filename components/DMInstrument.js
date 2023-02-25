@@ -43,14 +43,17 @@ function DMInstrument({loop, set_inst_array, inst_style, inst_name, set_set_inst
                 </Text>
             </Pressable>
             <DMMuteInst mute_inst={mute_inst} inst_volume={inst_volume} />
-            {[...Array(loopLen).keys()].reverse().map(
-                id => 
-                <DMButton
-                loop={loop}
-                inst_style={inst_style}
-                set_inst_array={set_inst_array}
-                id={id} />
-            )}
+            <View style={Styles.dm_inst_btn_container}>
+                {[...Array(loopLen).keys()].reverse().map(
+                    id => 
+                    <DMButton
+                        loop={loop}
+                        loopLen = {loopLen}
+                        inst_style={inst_style}
+                        set_inst_array={set_inst_array}
+                        id={id} />
+                )}
+            </View>
         </View>
     )
 

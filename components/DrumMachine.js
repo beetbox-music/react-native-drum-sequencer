@@ -32,7 +32,7 @@ const DrumMachine = () => {
     };
     
     // sounds states and functions:
-    const [loopLen, setLoopLen] = React.useState(16);
+    const [loopLen, setLoopLen] = React.useState(8);
     const [kick, setKick] = React.useState(Array(loopLen).fill(0));
     const [snare, setSnare] = React.useState(Array(loopLen).fill(0));
     const [hat, setHat] = React.useState(Array(loopLen).fill(0));

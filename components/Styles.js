@@ -1,6 +1,5 @@
-import { StyleSheet,Dimensions  } from 'react-native';
+import { StyleSheet  } from 'react-native';
 
-const { Height } = Dimensions.get('window');
 
 const Styles = StyleSheet.create({
   container: {
@@ -66,7 +65,6 @@ const Styles = StyleSheet.create({
     paddingHorizontal:10,
     flexDirection: 'column',
     justifyContent: "center",
-    height:Height,
   },
   dm_pads: {
     flex:1,
@@ -173,12 +171,17 @@ const Styles = StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
   },
+  dm_inst_btn_container:{
+    flex:1,
+    justifyContent:'space-evenly',
+  },
   dm_inst_btn: {
     marginLeft: "auto",
     marginRight: "auto",
     borderRadius: 10,
     width: "90%",
-    height: 35,
+    // height: 35,
+    flex:1,
     marginVertical: 2,
     marginHorizontal: 3
   },
