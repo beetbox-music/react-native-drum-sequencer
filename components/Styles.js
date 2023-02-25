@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet,Dimensions  } from 'react-native';
+
+const { Height } = Dimensions.get('window');
 
 const Styles = StyleSheet.create({
   container: {
@@ -23,9 +25,8 @@ const Styles = StyleSheet.create({
   },
   hr: {
     borderColor: 'rgba(255,255,255,0.4)',
-    borderStyle: "dashedx",
+    borderStyle: "dashed",
     borderBottomWidth: 1.5,
-    // borderBottomWidth: StyleSheet.hairlineWidth,
   },
   btn: {
     alignItems: 'center',
@@ -65,9 +66,10 @@ const Styles = StyleSheet.create({
     paddingHorizontal:10,
     flexDirection: 'column',
     justifyContent: "center",
+    height:Height,
   },
   dm_pads: {
-    // flex:.85,
+    flex:1,
     flexDirection: 'row',
   },
   dm_nav: {

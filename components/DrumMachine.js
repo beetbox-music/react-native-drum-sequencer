@@ -5,7 +5,6 @@ import { Audio } from 'expo-av';
 import Styles from "./Styles";
 import DMPads from "./DMPads";
 import DMNav from "./DMNav";
-import DMSlider from './DMSlider';
 
 let kickSound;
 let snareSound;
@@ -31,11 +30,12 @@ const DrumMachine = () => {
         await stopLoop();
         setTempo(parseFloat(t));
     };
-
+    
     // sounds states and functions:
-    const [kick, setKick] = React.useState(Array(15).fill(0));
-    const [snare, setSnare] = React.useState(Array(15).fill(0));
-    const [hat, setHat] = React.useState(Array(15).fill(0));
+    const [loopLen, setLoopLen] = React.useState(16);
+    const [kick, setKick] = React.useState(Array(loopLen).fill(0));
+    const [snare, setSnare] = React.useState(Array(loopLen).fill(0));
+    const [hat, setHat] = React.useState(Array(loopLen).fill(0));
     
     async function load(){
 
@@ -152,7 +152,7 @@ const DrumMachine = () => {
                     playSound(index);
                     setLoop(index);
                     
-                    if (index === 15) {
+                    if (index === (loopLen-1)) {
                         index = 0
                     }
                     else {
@@ -215,6 +215,7 @@ const DrumMachine = () => {
                 kickVolume = {kickVolume}
                 snareVolume = {snareVolume}
                 hatVolume = {hatVolume}
+                loopLen = {loopLen}
             />
             <DMNav
                 looping={looping}
