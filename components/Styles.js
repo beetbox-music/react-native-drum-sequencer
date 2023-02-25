@@ -4,23 +4,29 @@ import { StyleSheet  } from 'react-native';
 const Styles = StyleSheet.create({
   container: {
     flex: 1,
-    // flexDirection:"row",
     alignItems: 'center',
     justifyContent:"center",
     backgroundColor: '#231e2d',
-    paddingTop:30,
+    paddingTop:40,
   },
   header: {
-    display:"none",
-    borderBottomWidth: 7,
-    borderColor: "white",
     margin:0,
-    paddingTop: 40,
+    flex:1,
+    alignItems: 'center', 
+    justifyContent: 'center',
+
+    display:"none",
   },
   header_txt: {
+    borderBottomWidth: 3,
+    borderColor: "white",
     color: "white",
-    fontSize:10,
+    marginTop:50,
+    fontSize:20,
+    width:325,
     fontWeight: "900",
+    textAlign:"center",
+    transform: [{ rotate: '-90deg'}],
   },
   hr: {
     borderColor: 'rgba(255,255,255,0.4)',
@@ -71,7 +77,6 @@ const Styles = StyleSheet.create({
     flexDirection: 'row',
   },
   dm_nav: {
-    // flex:.1,
     flexDirection: 'row',
     justifyContent: "space-evenly",
   },
@@ -84,12 +89,13 @@ const Styles = StyleSheet.create({
     borderRadius: 100,
     elevation: 2,
     backgroundColor: '#00000000',
-  }, 
+  },
   settings_container: {
     position: "absolute",
     justifyContent: "space-between",
     flexDirection: "column",
     zIndex: 1,
+    top:85,
     width: "100%",
     backgroundColor: "rgba(0,0,0,.7)",
     borderRadius: 10,
@@ -97,8 +103,8 @@ const Styles = StyleSheet.create({
   },
   settings_close_outer: {
     marginTop: 10,
-    backgroundColor: "rgba(100,0,0,1)",
-    height: 37,
+    backgroundColor: "rgba(50,0,0,1)",
+    height: 45,
     marginLeft: "auto",
     marginRight: "auto",
     borderRadius: 20,
@@ -123,7 +129,7 @@ const Styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "space-evenly",
     width: "100%",
-    flexDirection: "row",
+    flexDirection: "column",
     flex: 1,
     bottom: 60,
     left:0,
@@ -132,12 +138,22 @@ const Styles = StyleSheet.create({
     borderRadius: 10,
     padding:20,
   }, 
+  tempo_settings_header:{
+    flexDirection:"row",
+    justifyContent:"space-evenly",
+    marginBottom:30,
+  },
+  dm_radio_container:{
+    flexDirection:"row",
+    flex:2,
+    justifyContent:"space-evenly",
+  },
   dm_slider_container:{
     flex:2,
     justifyContent:"center"
   },
   dm_instrument: {
-    flex: 1,
+    flex: 4,
     justifyContent: "space-evenly",
     flexDirection: 'column',
   },
@@ -181,6 +197,7 @@ const Styles = StyleSheet.create({
     borderRadius: 10,
     width: "90%",
     flex:1,
+    maxHeight:70,
     marginVertical: 2,
     marginHorizontal: 3
   },

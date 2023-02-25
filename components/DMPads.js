@@ -3,8 +3,9 @@ import { View } from 'react-native';
 import Styles from "./Styles";
 import DMInstrument from "./DMInstrument";
 import DMInstSettings from './DMInstSettings';
+import Header from './Header';
 
-function DMPads({ setKick, setHat, setSnare, loop, loopLen, setKickVolume, setSnareVolume, setHatVolume, kickVolume, snareVolume, hatVolume }) {
+function DMPads({ setKick, setHat, setSnare, kick, snare, hat, loop, loopLen, setKickVolume, setSnareVolume, setHatVolume, kickVolume, snareVolume, hatVolume }) {
 
     const [settings, setSettings] = React.useState(false);
     const [settingsInstrument, setSettingsInstrument] = React.useState("");
@@ -37,8 +38,10 @@ function DMPads({ setKick, setHat, setSnare, loop, loopLen, setKickVolume, setSn
                     snareVolume={snareVolume}
                     hatVolume={hatVolume}
                 /> : null}
+            <Header/>
             <DMInstrument
                 set_inst_array={setKick}
+                inst_array={kick}
                 loop={loop}
                 inst_style={"dm_kick"}
                 inst_name={"KICK"}
@@ -50,6 +53,7 @@ function DMPads({ setKick, setHat, setSnare, loop, loopLen, setKickVolume, setSn
             />
             <DMInstrument
                 set_inst_array={setSnare}
+                inst_array={snare}
                 loop={loop}
                 inst_style={"dm_snare"}
                 inst_name={"SNARE"}
@@ -61,6 +65,7 @@ function DMPads({ setKick, setHat, setSnare, loop, loopLen, setKickVolume, setSn
             />
             <DMInstrument
                 set_inst_array={setHat}
+                inst_array={hat}
                 loop={loop}
                 inst_style={'dm_hat'}
                 inst_name={"HAT"}

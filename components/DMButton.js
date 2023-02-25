@@ -1,8 +1,8 @@
 import React from 'react';
-import { Pressable , View , Text } from 'react-native';
+import { Pressable , View , Text ,TouchableOpacity } from 'react-native';
 import Styles from "./Styles";
 
-const DMButton = function({loop,id,set_inst_array,inst_style,loopLen}){
+const DMButton = function({loop,id,set_inst_array,inst_style,inst_array}){
 
     const [status, setStatus] = React.useState('unchecked');
 
@@ -16,6 +16,14 @@ const DMButton = function({loop,id,set_inst_array,inst_style,loopLen}){
         else{array[id] = 0;}
         return array;
     }
+
+    React.useEffect(() => {
+        if(inst_array[id]===1){
+            setStatus('checked');
+        }else{
+            setStatus('unchecked');
+        }
+    }, [inst_array]);
     
 
     return (
@@ -48,5 +56,5 @@ function prevDMButton(prev,next){
     return (prev.loop === prev.id) === (next.loop === next.id);
 }    
 
-// export default React.memo(DMButton);
-export default React.memo(DMButton,prevDMButton);
+export default DMButton;
+// export default React.memo(DMButton,prevDMButton);

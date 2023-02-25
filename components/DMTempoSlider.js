@@ -3,7 +3,7 @@ import Slider from '@react-native-community/slider';
 import Styles from "./Styles";
 import { TouchableOpacity, View , Text } from 'react-native';
 
-function DMSlider({tempo,update_tempo}){
+function DMTempoSlider({tempo,update_tempo}){
 
     return (
         <View style={Styles.dm_slider_container}>
@@ -22,4 +22,4 @@ function DMSlider({tempo,update_tempo}){
 
 };
 
-export default DMSlider;
+export default DMTempoSlider;

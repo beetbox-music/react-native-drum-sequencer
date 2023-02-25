@@ -3,7 +3,7 @@ import { TouchableOpacity, View , Text } from 'react-native';
 import DMTempoSettings from './DMTempoSettings';
 import Styles from "./Styles";
 
-function DMNav({looping,stopLoop,startLoop,resetLoop,tempo,update_tempo}){
+function DMNav({looping,stopLoop,startLoop,resetLoop,tempo,update_tempo,loopLen,update_loopLen}){
     
     const [showVolume, setShowVolume] = React.useState(false);
     function toggle_tempo_settings(){
@@ -21,6 +21,8 @@ function DMNav({looping,stopLoop,startLoop,resetLoop,tempo,update_tempo}){
                     resetLoop={resetLoop}
                     tempo={tempo}
                     update_tempo={update_tempo}
+                    loopLen={loopLen}
+                    update_loopLen={update_loopLen}
                     /> : null}
             <TouchableOpacity 
                 onPress={looping ? stopLoop : startLoop} 

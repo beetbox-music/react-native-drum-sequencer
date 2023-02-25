@@ -1,5 +1,5 @@
 {
-  "name": "py-beatbox",
+  "name": "react-native-drum-sequencer",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "expo": "~47.0.12",
     "expo-ads-admob": "^13.0.0",
     "expo-audio-hooks": "^1.0.3",
-    "expo-av": "~13.0.2",
+    "expo-av": "~13.0.3",
     "expo-file-system": "^15.1.1",
     "expo-status-bar": "~1.4.2",
     "ky": "^0.33.2",

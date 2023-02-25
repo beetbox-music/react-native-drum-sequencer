@@ -6,9 +6,9 @@ import Styles from "./Styles";
 import DMPads from "./DMPads";
 import DMNav from "./DMNav";
 
-let kickSound;
-let snareSound;
-let hatSound;
+const kickSound = new Audio.Sound()
+const snareSound = new Audio.Sound()
+const hatSound = new Audio.Sound()
 
 const DrumMachine = () => {
 
@@ -17,67 +17,106 @@ const DrumMachine = () => {
     const [loop, setLoop] = React.useState(0);
     const [looping, setLooping] = React.useState(false);
     function startLoop() {
+        // load();
         setLooping(true);
     };
     function stopLoop() {
         setLooping(false);
+        // unload();
     };
     function resetLoop() {
         setLoop(0);
-        setLooping(false);
+        stopLoop();
     };
     async function update_tempo(t){
-        await stopLoop();
-        setTempo(parseFloat(t));
+        try { 
+            await stopLoop();
+            setTempo(parseFloat(t));
+            // await startLoop();
+            // load();
+            // await kickSound.setRateAsync(32*(t/680),true);
+            // await snareSound.setRateAsync(32*(t/680),true);
+            // await hatSound.setRateAsync(32*(t/680),true);
+        }
+        catch(e){
+            console.log("UPDATE_TEMPO");
+            console.log(e)
+        }
     };
-    
+
     // sounds states and functions:
     const [loopLen, setLoopLen] = React.useState(16);
     const [kick, setKick] = React.useState(Array(loopLen).fill(0));
     const [snare, setSnare] = React.useState(Array(loopLen).fill(0));
     const [hat, setHat] = React.useState(Array(loopLen).fill(0));
-    
-    async function load(){
 
-        kickSound = new Audio.Sound();
-        snareSound = new Audio.Sound();
-        hatSound = new Audio.Sound();
-        
-        try {
-            await kickSound.loadAsync(require('../assets/instruments/kick.wav'));
-            await snareSound.loadAsync(require('../assets/instruments/snare.wav'));
-            await hatSound.loadAsync(require('../assets/instruments/hat.wav'));
-
-            // kickSound.setVolumeAsync(kickVolume)
-            // snareSound.setVolumeAsync(snareVolume)
-            // hatSound.setVolumeAsync(hatVolume)
-            
-        } catch (err) {
-            console.log("LOADING ERROR:");
-            console.error(err);
+    React.useEffect(() => {
+        try{
+            setKick(Array(loopLen).fill(0));
+            setSnare(Array(loopLen).fill(0));
+            setHat(Array(loopLen).fill(0));
         }
+        catch(e){
+            console.log("ERROR SETTING loopLen");
+        }
+        // return () => {
+        // };
+    }, [loopLen]);
+    async function update_loopLen(l){
+        resetLoop();
+        await setLoopLen(l);
+    }
+    const [loaded, setLoaded] = React.useState(false);
+    async function load(){
+        if(!loaded){
+            try {
+
+                // kickSound = new Audio.Sound();
+                // snareSound = new Audio.Sound();
+                // hatSound = new Audio.Sound();
+
+                await kickSound.loadAsync(require('../assets/instruments/kick.wav'));
+                await snareSound.loadAsync(require('../assets/instruments/snare.wav'));
+                await hatSound.loadAsync(require('../assets/instruments/hat.wav'));
+    
+                setLoaded(true);
+                
+            } catch (err) {
+                console.log("LOADING ERROR:");
+                console.error(err);
+            }
+        }
+
     }
     async function unload() {
-        try {
-            await kickSound.unloadAsync();
-            await snareSound.unloadAsync();
-            await hatSound.unloadAsync();
-        } 
-        catch (err) {
-            console.log("UNLOADING ERROR:");
-            console.error(err);
+        if(loaded){
+            try {
+                await kickSound.unloadAsync();
+                await snareSound.unloadAsync();
+                await hatSound.unloadAsync();
+                
+                setLoaded(false);
+            } 
+            catch (err) {
+                console.log("UNLOADING ERROR:");
+                console.error(err);
+            }
         }
     }
     function playSound(index) {
-
-        if (kick[index] === 1) {
-            playKick();
+        try{
+            if (kick[index] === 1) {
+                playKick();
+            }
+            if (snare[index] === 1) {
+                playSnare();
+            }
+            if (hat[index] === 1) {
+                playHat();
+            }
         }
-        if (snare[index] === 1) {
-                        playSnare();
-        }
-        if (hat[index] === 1) {
-            playHat();
+        catch(e){
+            console.log("ERROR PLAYING SOUND");
         }
     };
     async function playKick() {
@@ -89,21 +128,35 @@ const DrumMachine = () => {
     async function playHat() {
         await hatSound.replayAsync();
     };
-    async function updateKickVolume(v) {
-        await kickSound.setVolumeAsync(v);
-    };
-    async function updateSnareVolume(v) {
-        await snareSound.setVolumeAsync(v);
-    };
-    async function updateHatVolume(v) {
-        await hatSound.setVolumeAsync(v);
-    };
-
+    
     // settings
     const [kickVolume, setKickVolume] = React.useState(1);
     const [snareVolume, setSnareVolume] = React.useState(1);
     const [hatVolume, setHatVolume] = React.useState(1);
-
+    async function updateKickVolume(v) {
+        try{
+            await kickSound.setVolumeAsync(v);
+        }
+        catch(e){
+            console.log("UPDATE VOLUME ERROR: kickSound");
+        }
+    };
+    async function updateSnareVolume(v) {
+        try{
+            await snareSound.setVolumeAsync(v);
+        }
+        catch(e){
+            console.log("UPDATE VOLUME ERROR: snareSound");
+        }
+    };
+    async function updateHatVolume(v) {
+        try{
+            await hatSound.setVolumeAsync(v);
+        }
+        catch(e){
+            console.log("UPDATE VOLUME ERROR: hatSound");
+        }
+    };
     React.useEffect(() => {
         updateKickVolume(kickVolume)
     }, [kickVolume]);
@@ -113,7 +166,6 @@ const DrumMachine = () => {
     React.useEffect(() => {
         updateHatVolume(hatVolume)
     }, [hatVolume]);
-
 
 
     // LOOP/SEQUENCER:
@@ -224,6 +276,8 @@ const DrumMachine = () => {
                 resetLoop={resetLoop}
                 tempo={tempo}
                 update_tempo={update_tempo} 
+                loopLen = {loopLen}
+                update_loopLen = {update_loopLen}
             />
         </View>
     );
