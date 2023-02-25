@@ -131,7 +131,7 @@ const Styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,.7)",
     borderRadius: 10,
     padding:20,
-  },
+  }, 
   dm_slider_container:{
     flex:2,
     justifyContent:"center"
