@@ -180,7 +180,6 @@ const Styles = StyleSheet.create({
     marginRight: "auto",
     borderRadius: 10,
     width: "90%",
-    // height: 35,
     flex:1,
     marginVertical: 2,
     marginHorizontal: 3

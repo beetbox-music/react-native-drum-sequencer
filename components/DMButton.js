@@ -35,9 +35,7 @@ const DMButton = function({loop,id,set_inst_array,inst_style,loopLen}){
                     loop === id ? Styles.dm_inst_btn_active : null,
                     Styles[status]
                     ]}>
-                    <Text>
-                        {id}
-                    </Text>
+                    {/* <Text> {id} </Text> */}
                 </View>
 
             </View>
