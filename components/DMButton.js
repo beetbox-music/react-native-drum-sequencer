@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable , View , Text ,TouchableOpacity } from 'react-native';
 import Styles from "./Styles";
 
-const DMButton = function({loop,id,set_inst_array,inst_style,inst_array}){
+const DMButton = function({loop,id,set_inst_array,inst_style,inst_array,array_val,modulo}){
 
     const [status, setStatus] = React.useState('unchecked');
 
@@ -27,34 +27,33 @@ const DMButton = function({loop,id,set_inst_array,inst_style,inst_array}){
     
 
     return (
-        <Pressable
-            onPress={onButtonToggle}
-            style={[Styles.dm_inst_btn]}
-            >
-            <View 
-            style={[
-                Styles[inst_style],
-                Styles[status], 
-                Styles.dm_inst_btn
-                ]}>
-                
-                <View style={[
-                    Styles.inner,
-                    loop === id ? Styles.dm_inst_btn_active : null,
-                    Styles[status]
+            <Pressable
+                onPress={onButtonToggle}
+                style={[Styles.dm_inst_btn]}
+                >
+                { modulo ? <View style={Styles.hr}/> : null}
+                <View 
+                style={[
+                    Styles[inst_style],
+                    Styles[status], 
+                    Styles.dm_inst_btn
                     ]}>
-                    {/* <Text> {id} </Text> */}
-                </View>
+                    <View style={[
+                        Styles.inner,
+                        loop === id ? Styles.dm_inst_btn_active : null,
+                        Styles[status]
+                        ]}>
+                    </View>
 
-            </View>
-        </Pressable> 
+                </View>
+            </Pressable> 
     )
 
 };
 // memo for rendering efficiency
 function prevDMButton(prev,next){
-    return (prev.loop === prev.id) === (next.loop === next.id);
+    return (prev.loop === prev.id) === (next.loop === next.id) === (next.array_val === prev.array_val);
 }    
 
-export default DMButton;
-// export default React.memo(DMButton,prevDMButton);
+// export default DMButton;
+export default React.memo(DMButton,prevDMButton);
