@@ -3,9 +3,9 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 [![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://github.com/mkenney/software-guides/blob/master/STABILITY-BADGES.md#alpha)
 
-### An open-source drum-sequencer built using React Native and Expo
+### An open-source drum-sequencer built using [React Native](https://reactnative.dev/) and [Expo](https://expo.dev/)
 
-Test the app using Expo snack: https://snack.expo.dev/@paladinic/expo_drumachine
+Test the app using this [Expo Snack](https://snack.expo.dev/@paladinic/expo_drumachine)
 
 Test the latest version by importing this repository ash shown on [this page](https://docs.joevo2.com/workshop/importing-git-repository-into-expo-snack).
 
