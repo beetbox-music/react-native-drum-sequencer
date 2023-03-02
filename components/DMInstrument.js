@@ -45,7 +45,7 @@ function DMInstrument({loop, set_inst_array, inst_style, inst_name, set_set_inst
                     id => 
                         <DMButton
                             loop={loop}
-                            modulo = {  (id+1)%4 === 0 }
+                            // modulo = { (id+1)%4 === 0 }
                             loopLen = {loopLen}
                             inst_style={inst_style}
                             set_inst_array={set_inst_array}

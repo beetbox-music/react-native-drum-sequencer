@@ -38,7 +38,6 @@ function DMPads({ setKick, setHat, setSnare, kick, snare, hat, loop, loopLen, se
                     snareVolume={snareVolume}
                     hatVolume={hatVolume}
                 /> : null}
-            <Header/>
             <DMInstrument
                 set_inst_array={setKick}
                 inst_array={kick}

@@ -31,7 +31,8 @@ const Styles = StyleSheet.create({
   hr: {
     borderColor: 'rgba(255,255,255,0.4)',
     borderStyle: "dashed",
-    borderBottomWidth: 1.5,
+    borderBottomWidth: 1,
+    // marginBottom:5,
   },
   btn: {
     alignItems: 'center',
@@ -153,7 +154,8 @@ const Styles = StyleSheet.create({
     justifyContent:"center"
   },
   dm_instrument: {
-    flex: 4,
+    flex: 1,
+    margin:-7,
     justifyContent: "space-evenly",
     flexDirection: 'column',
   },

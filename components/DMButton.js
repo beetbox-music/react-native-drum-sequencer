@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable , View , Text ,TouchableOpacity } from 'react-native';
 import Styles from "./Styles";
 
-const DMButton = function({loop,id,set_inst_array,inst_style,inst_array,array_val,modulo}){
+const DMButton = function({loop,id,set_inst_array,inst_style,inst_array,modulo,loopLen}){
 
     const [status, setStatus] = React.useState('unchecked');
 
@@ -31,7 +31,7 @@ const DMButton = function({loop,id,set_inst_array,inst_style,inst_array,array_va
                 onPress={onButtonToggle}
                 style={[Styles.dm_inst_btn]}
                 >
-                { modulo ? <View style={Styles.hr}/> : null}
+                {id === ((loopLen/2)-1)? <View style={Styles.hr}/> : null}
                 <View 
                 style={[
                     Styles[inst_style],
