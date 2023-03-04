@@ -19,7 +19,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.paladinic.pybeatbox",
+      "bundleIdentifier": "com.paladinic.react-native-drum-sequencer",
       "googleMobileAdsAppId": "ca-app-pub-5191542896957182~5136206176"
     },
     "android": {
@@ -28,14 +28,14 @@
         "backgroundColor": "#FFFFFF"
       },
       "googleMobileAdsAppId": "ca-app-pub-5191542896957182~5698462899",
-      "package": "com.paladinic.pybeatbox"
+      "package": "com.paladinic.react-native-drum-sequencer"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "887362bd-a79f-44fd-a406-252b5422afa4"
+        "projectId": "445f6896-d987-40e4-bf4a-ca6435a994c6"
       }
     }
   }
